@@ -1,0 +1,28 @@
+#keyboard {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#text-bar {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#copy-button {
+  padding: 5px 10px;
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.row-button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Add more CSS styles for different keyboard states */
