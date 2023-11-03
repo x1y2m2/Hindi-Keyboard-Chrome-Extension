@@ -191,8 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
         rightGrid.appendChild(newButton);
     }
 
-    addButtonToRightGridWithImage("space-icon.png", "space");
-    addButtonToRightGridWithImage("remove-icon.png", "remove");
+    addButtonToRightGridWithImage("../images/space-icon.png", "space");
+    addButtonToRightGridWithImage("../images/remove-icon.png", "remove");
     addButtonToRightGrid("\u0902");
     addButtonToRightGrid("\u0901");
     addButtonToRightGrid("\u0964");
