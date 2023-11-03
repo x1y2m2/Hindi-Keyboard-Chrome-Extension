@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="keyboard.css">
+    <meta charset="UTF-8">
+    <title>Hindi Keyboard</title>
+    <link rel="stylesheet" href="keyboard.css">
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <body>
-  <div id="keyboard">
-    <input type="text" id="text-bar" readonly>
-    <button id="copy-button">Copy</button>
-    <div id="character-buttons">
-      <!-- Initially, display the first letters in each row -->
-      <button class="row-button" data-row="1">क</button>
-      <button class="row-button" data-row="2">च</button>
-      <button class="row-button" data-row="3">त</button>
-      <button class="row-button" data-row="4">प</button>
+    <div class="keyboard-container">
+        <div class="text-bar">
+            <input type="text" id="input-text" placeholder="यहाँ लिखिए...">
+            <button id="copy-button">
+                <img src="copy-icon.png" alt="Copy">
+            </button>
+        </div>
+        <div class="separator-container">
+            <button id="go-back-button" class="go-back-button">
+                <img src="go-back-icon.png" alt="Go Back">
+            </button>
+            <hr class="separator">
+        </div>
+        <div class="keypad">
+        <div class="left-grid" id="left-grid">
+            
+            
+            <!-- Add more buttons for the left grid -->
+        </div>
+        <div class="vertical-line"></div>
+        <div class="right-grid">
+            <!-- Add more buttons for the right grid -->
+        </div>
     </div>
-  </div>
-  <script src="keyboard.js"></script>
+    <p class="contact-email">For review or collaboration, contact: <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a></p>
+    </div>
+    <script src="keyboard.js"></script>
 </body>
 </html>
