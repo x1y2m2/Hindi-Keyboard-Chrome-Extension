@@ -7,7 +7,7 @@ body {
 }
 
 .keyboard-container {
-    max-width: 450px;
+    width: 450px;
     margin: 0 auto;
     background-color: #000;
     border: 1px solid #e1e4e8;
@@ -53,10 +53,9 @@ body {
     height: 20px;
 }
 
-/* Add the following styles to make the buttons eye-catching */
 .keyboard-button {
     background-color: #04A2DF;
-    color: #fff; /* White text color */
+    color: #fff;
     height: 35px;
     width: 55px;
     font-size: 16px;
@@ -69,12 +68,12 @@ body {
 }
 
 .keyboard-button:hover {
-    background-color: #00BFFF; /* Lighter saffron color on hover */
+    background-color: #00BFFF;
 }
 
 .special-button {
     background-color: #04A2DF;
-    color: #fff; /* White text color */
+    color: #fff;
     height: 35px;
     width: 55px;
     font-size: 16px;
@@ -86,47 +85,42 @@ body {
     transition: background-color 0.2s;
 }
 
-/* Styles for the separator container */
 .separator-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Styles for the separator */
 .separator {
     width: 100%;
     margin: 10px 0;
-    border: 1px solid #d1d5da; /* Separator line */
+    border: 1px solid #d1d5da;
 }
 
 .go-back-button {
     display: inline-block;
     cursor: pointer;
-    text-decoration: none; /* Remove the default underline */
-    background: transparent; /* Make the background transparent */
-    border: none; /* Remove any border */
+    text-decoration: none;
+    background: transparent;
+    border: none;
 }
 
-/* Style the image inside the anchor */
 .go-back-button img {
-    width: 24px; /* Adjust the width and height as needed */
+    width: 24px;
     height: 24px;
-    vertical-align: middle; /* Vertically center the image */
+    vertical-align: middle;
 }
 
 .go-back-button:hover {
-    opacity: 0.7; /* Reduce opacity on hover for interactivity */
+    opacity: 0.7;
 }
 
-/* Styles for the keypad */
 .keypad {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Styles for the left grid of buttons */
 .left-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -136,14 +130,12 @@ body {
     padding-top: 10px;
 }
 
-/* Styles for the vertical line */
 .vertical-line {
     border-left: 3px solid #d1d5da;
-    height: 220px; /* Adjust the height as needed */
+    height: 220px;
     margin: 10px;
 }
 
-/* Styles for the right grid of buttons */
 .right-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -157,15 +149,5 @@ body {
     font-size: 14px;
     color: #666;
     text-align: center;
-    margin-top: 20px;
 }
 
-.contact-email a {
-    color: #0077b5;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-email a:hover {
-    text-decoration: underline;
-}
