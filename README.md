@@ -1,5 +1,5 @@
 # Hindi-Keyboard-Extension
-https://github.com/x1y2m2/Hindi-Keyboard-Extension/archive/refs/heads/main.zip
+
 ## Overview
 
 An optimal Hindi Keyboard which takes advantage of unique structure of Devanagari Varnamala.
