@@ -1,58 +1,45 @@
 {
   "manifest_version": 3,
-  "name": "Hindi Keyboard",
+  "name": "Hindi On-Screen Keyboard",
   "version": "1.0",
-  "description": "An onscreen Hindi keyboard for easy typing in Hindi.",
+  "description": "An on-screen Hindi keyboard extension for easy text input.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
-  "icons": {
-    "48": "icons/icon.png",
-    "96": "icons/icon.png"
-  },
   "action": {
-    "default_popup": "popup/popup.html",
+    "default_popup": "keyboard/keyboard.html",
     "default_icon": {
-      "16": "icons/icon.png",
-      "48": "icons/icon.png",
-      "128": "icons/icon.png"
+      "16": "images/icon-keyboard-16.png",
+      "48": "images/icon-keyboard-48.png",
+      "96": "images/icon-keyboard-96.png"
     }
+  },
+  "icons": {
+    "16": "images/icon-keyboard-16.png",
+    "48": "images/icon-keyboard-48.png",
+    "96": "images/icon-keyboard-96.png"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content_scripts/content.js"],
-      "run_at": "document_end"
+      "js": ["keyboard/keyboard.js"],
+      "css": ["keyboard/keyboard.css"]
     }
   ],
-  "background": {
-    "service_worker": "background/background.js"
-  },
-  "browser_action": {
-    "default_popup": "popup/popup.html",
-    "default_icon": {
-      "16": "icons/icon.png",
-      "48": "icons/icon.png",
-      "128": "icons/icon.png"
+  "commands": {
+    "toggle-keyboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Toggle the on-screen keyboard"
     }
   },
-  "web_accessible_resources": {
-    {
-      "resources": [
-        "keyboard/*"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  },
-  "icons": {
-    "16": "icons/icon.png",
-    "48": "icons/icon.png",
-    "128": "icons/icon.png"
-  },
-  "default_locale": "en",
+  "permissions": [
+    "activeTab"
+  ],
+  "minimum_chrome_version": "88",
   "permissions": ["activeTab"],
-  "action": {
-    "default_popup": "popup/popup.html",
-    "default_icon": "icons/icon.png"
-  }
+  "permissions": ["storage"]
 }
