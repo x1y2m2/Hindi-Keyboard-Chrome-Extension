@@ -50,4 +50,4 @@ You have two options for installation:
 
 ## Review
 
-For review, contact me at ![lohanravindra@gmail.com](mailto:lohanravindra@gmail.com)
+For review, contact me at [lohanravindra@gmail.com](mailto:lohanravindra@gmail.com)
