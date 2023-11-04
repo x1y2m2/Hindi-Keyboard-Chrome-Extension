@@ -1,4 +1,4 @@
-# Hindi-Keyboard-Extension
+# Hindi-Keyboard-Chrome-Extension
 
 ## Overview
 
