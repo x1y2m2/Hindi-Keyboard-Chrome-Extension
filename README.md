@@ -35,7 +35,12 @@ You have two options for installation:
    curl -LOk https://github.com/x1y2m2/Hindi-Keyboard-Extension/archive/refs/heads/main.zip
    unzip main.zip
    ```
+
 3. **For installation:**
    ```bash
    chrome-cli extensions install /path/to/extension_directory
    ```
+
+##Screencshots
+
+![Hindi On-Screen Keyboard Logo](Screenshots/kb1.png)
