@@ -41,6 +41,9 @@ You have two options for installation:
    chrome-cli extensions install /path/to/extension_directory
    ```
 
-##Screencshots
+## Screenshots
 
-![Hindi On-Screen Keyboard Logo](Screenshots/kb1.png)
+![1](Screenshots/kb1.png)
+![1](Screenshots/kb2.png)
+![1](Screenshots/kb3.png)
+![1](Screenshots/kb4.png)
