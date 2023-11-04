@@ -1,5 +1,5 @@
 # Hindi-Keyboard-Extension
-
+https://github.com/x1y2m2/Hindi-Keyboard-Extension/archive/refs/heads/main.zip
 ## Overview
 
 An optimal Hindi Keyboard which takes advantage of unique structure of Devanagari Varnamala.
@@ -11,7 +11,7 @@ You have two options for installation:
 ### Option 1: Manual Installation
 
 1. **Download the Extension:**
-   - Click [here](https://github.com/yourusername/hindi-keyboard-extension/archive/main.zip) to download the extension ZIP file from this GitHub repository.
+   - Click [here](https://github.com/x1y2m2/Hindi-Keyboard-Extension/archive/refs/heads/main.zip) to download the extension ZIP file from this GitHub repository.
 
 2. **Unzip the Extension:**
    - Extract the ZIP file to your local computer.
@@ -32,7 +32,7 @@ You have two options for installation:
    - Use the following command to download the extension:
    ```bash
    # Use curl to download the ZIP archive and unzip it
-   curl -LOk https://github.com/yourusername/hindi-keyboard-extension/archive/main.zip
+   curl -LOk https://github.com/x1y2m2/Hindi-Keyboard-Extension/archive/refs/heads/main.zip
    unzip main.zip
    ```
 3. **For installation:**
