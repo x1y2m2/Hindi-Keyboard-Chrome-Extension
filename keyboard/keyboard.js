@@ -56,18 +56,37 @@ document.addEventListener("DOMContentLoaded", function () {
     function writeTextInTextBar(text) {
         const textBar = document.querySelector("#input-text");
 
+        var caretStart = textBar.selectionStart;
+        var caretEnd = textBar.selectionEnd;
+
+        var textValue = textBar.value;
+
         // Set the value of the input element to the provided text
-        textBar.value = textBar.value + text;
+        textBar.value = textValue.slice(0,caretStart) + text + textValue.slice(caretEnd);
+        var newCaretPosition = caretStart + text.length;
+        textBar.selectionStart = newCaretPosition;
+        textBar.selectionEnd = newCaretPosition;
     }
 
     // Function to remove the last character from the text bar
     function removeLastInput() {
         const textBar = document.querySelector("#input-text");
+        var caretStart = textBar.selectionStart;
+        var caretEnd = textBar.selectionEnd;
         const currentText = textBar.value;
 
-        if (currentText.length > 0) {
-            const newText = currentText.substring(0, currentText.length - 1);
-            textBar.value = newText;
+        if (caretStart > 0 || caretEnd > 0) {
+            if (caretStart < caretEnd){
+                var newText = currentText.slice(0,caretStart) + currentText.slice(caretEnd);
+                textBar.value = newText;
+                textBar.selectionStart = caretStart;
+                textBar.selectionEnd = caretStart;
+            }else{
+                var newText = currentText.slice(0,caretStart-1) + currentText.slice(caretStart);
+                textBar.value = newText;
+                textBar.selectionStart = caretStart - 1;
+                textBar.selectionEnd = caretStart - 1;
+            }
         }
     }
 
@@ -75,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const keypad1 = ["क..","च..","ट..","त..","प..","य..","श..","क्ष.."];
     const keypads1 = [["क","ख","ग","घ","ङ"],["च","छ","ज","झ","ञ"],["ट","ठ","ड","ढ","ण"],["त","थ","द","ध","न"],["प","फ","ब","भ","म"],["य","र","ल","व"],["श","ष","स","ह"],["क्ष","त्र","ज्ञ"]];
-    const keypad2 = ["अ..","१२३","123","$.."];
-    const keypads2 = [["अ","आ","इ","ई","उ","ऊ","ऋ","ॠ","ए","ऐ","ओ","औ","अं","अः"],["१","२","३","४","५","६","७","८","९","०"],["1","2","3","4","5","6","7","8","9","0"],["ॐ","॰"]];
+    const keypad2 = ["अ..","ा","१२३","123","$.."];
+    const keypads2 = [["अ","आ","इ","ई","उ","ऊ","ऋ","ॠ","ए","ऐ","ओ","औ","अं","अः"],["ा","ि","ी","ु","ू","ृ","ॄ","े","ै","ो","ौ","्"],["१","२","३","४","५","६","७","८","९","०"],["1","2","3","4","5","6","7","8","9","0"],["ॐ","॰"]];
 
     const matras = ["","ा","ि","ी","ु","ू","ृ","ॄ","े","ै","ो","ौ","्"];
     
@@ -84,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       addButtonToGrid(keypad1[i],i+1);
     }
     
-    for(let i=0; i<4; i++){
+    for(let i=0; i<5; i++){
       addButtonToGrid(keypad2[i],i+9);
     }
 
@@ -103,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
           //
           replaceButtons(gridState1,parseInt(buttonId));
         }
-        else if(gridState2===0 && gridState1>9){
+        else if(gridState2===0 && gridState1>10){
           //
           writeTextInTextBar(button.textContent);
           //replaceButtons(0,0)
@@ -134,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             addButtonToGrid(keypad1[i],i+1);
           }
           
-          for(let i=0; i<4; i++){
+          for(let i=0; i<5; i++){
             addButtonToGrid(keypad2[i],i+9);
           }
         }else if(a>0 && b===0){
