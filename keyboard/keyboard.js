@@ -67,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var newCaretPosition = caretStart + text.length;
         textBar.selectionStart = newCaretPosition;
         textBar.selectionEnd = newCaretPosition;
+
+        if(textBar.value.length - newCaretPosition < 3){
+            textBar.scrollLeft = textBar.scrollWidth;
+        }
     }
 
     // Function to remove the last character from the text bar
