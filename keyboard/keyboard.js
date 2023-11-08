@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         newButton.dataset.buttonId = id;
         newButton.addEventListener("click", function () {
             document.querySelector("#input-text").focus();
+            handleButtonClick(id,text);
         });
 
         leftGrid.appendChild(newButton);
@@ -107,29 +108,23 @@ document.addEventListener("DOMContentLoaded", function () {
       addButtonToGrid(keypad2[i],i+9);
     }
 
-    function handleButtonClick(event) {
-        const button = event.target;
-        const buttonId = button.dataset.buttonId;
+    function handleButtonClick(buttonId, text) {
 
-        if(buttonId===undefined){
-          return
-        }
-
-        // Perform different actions based on the button's id
+        // Perform different actions based on the button's id parseInt(buttonId)
         if(gridState1===0 && gridState2===0){
-          replaceButtons(parseInt(buttonId),0);
+          replaceButtons(buttonId,0);
         }else if(gridState2===0 && gridState1<9){
           //
-          replaceButtons(gridState1,parseInt(buttonId));
+          replaceButtons(gridState1,buttonId);
         }
         else if(gridState2===0 && gridState1>10){
           //
-          writeTextInTextBar(button.textContent);
+          writeTextInTextBar(text);
           //replaceButtons(0,0)
         }
         else{
           //
-          writeTextInTextBar(button.textContent);
+          writeTextInTextBar(text);
           replaceButtons(0,0);
         }
     }
@@ -186,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newButton.addEventListener("click", function () {
             document.querySelector("#input-text").focus();
+            writeTextInTextBar(text);
         });
 
         rightGrid.appendChild(newButton);
@@ -203,6 +199,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newButton.addEventListener("click", function () {
             document.querySelector("#input-text").focus();
+            if(altText==="space"){
+                writeTextInTextBar("\u0020");
+            }else{
+                removeLastInput();
+            }
         });
 
         newButton.appendChild(imgElement);
@@ -219,26 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
     addButtonToRightGrid("\u002c");
     addButtonToRightGrid("\u003f");
 
-    // Function to handle clicks on buttons in the right grid
-    function handleRightGridButtonClick(event) {
-        const button = event.target;
-
-        // Check if the button has text content or an image
-        if (button.className==="keyboard-button") {
-            // Handle text content
-            const buttonText = button.textContent;
-            writeTextInTextBar(buttonText);
-        } else {
-            // Handle image content
-            const imgElement = button.querySelector("img");
-            const altText = button.alt;
-            if(altText === "space"){
-              writeTextInTextBar("\u0020");
-            }else{
-              removeLastInput();
-            }
-        }
-    }
 
     // Add a click event listener to the "Go Back" button
     document.querySelector("#go-back-button").addEventListener("click", function () {
@@ -251,6 +232,4 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#input-text").focus();
     });
 
-    document.querySelector("#left-grid").addEventListener("click", handleButtonClick);
-    document.querySelector(".right-grid").addEventListener("click", handleRightGridButtonClick);
 });
